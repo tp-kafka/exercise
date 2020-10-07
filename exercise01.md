@@ -18,9 +18,8 @@ Verifify if the file looks similar to this:
 ## Exercise
 Using the commands provided below:
  1. Check which topics are available in the cluster 
- 2. Create a new topic
-    with 3 partitions and replication factor of 1
- 3. Take turns to produce and consume messages from your topic; one person in the teams produces, the other receives
+ 2. Create a new topic with 3 partitions and replication factor of 3
+ 3. Take turns to produce and consume messages from your topic; one person in the team produces, the other receives
  4. You can create and delete topics, but make sure that at the end your team has 1 available topic. You will need it in the following exercise
 
 ## Useful commands
@@ -35,7 +34,7 @@ Using the commands provided below:
 
     kafka-topics.sh \
     --create \
-    --replication-factor <no. replicas,> \
+    --replication-factor <no. replicas> \
     --partitions <no. partitions> \
     --topic <TOPIC_NAME> \
     --bootstrap-server pkc-4ygn6.europe-west3.gcp.confluent.cloud:9092 \
