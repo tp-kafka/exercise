@@ -15,7 +15,7 @@ components:
     memoryLimit: 128Mi
     type: dockerimage
     alias: kafka
-    image: taion809/kafka-cli
+    image: bitnami/kafka
   - id: redhat/java11/latest
     type: chePlugin
   - mountSources: true
