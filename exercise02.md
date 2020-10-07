@@ -2,7 +2,7 @@
 The goal of this excercise is to get familiar with the usage of Kafka from a Java Application. 
 
 ## JUnit
-We will start by experimenting with JUnit Tests and Embedded Kafka.
+We will start by experimenting with JUnit Tests and Embedded Kafka. Please use the devfile URL https://raw.githubusercontent.com/tp-kafka/exercise/master/devfiles/ex02-junit.devfile.yaml or clone https://github.com/tp-kafka/chat/ and checkout branch ex02/junit.
 
 ### Producing Messages
 You will find predefined methods within the chat-service project in class ProduceExcerciseTest marked with 'TODO'. Run these tests with "mvn test" in the maven container.
@@ -18,7 +18,7 @@ You will find predefined methods within the chat-service project in class KafkaT
 - [ ] Consume topic and partition (on which the message was received) as well as the string payload from topic "consumeMetadata" by using the KafkaListener, Payload and Header annotation and the KafkaHeaders class
 
 ## Spring Boot Kafka Application
-Now we will work on our Chat Application Example. 
+Now we will work on our Chat Application Example. Please use the devfile URL https://raw.githubusercontent.com/tp-kafka/exercise/master/devfiles/ex02-app.devfile.yaml or clone https://github.com/tp-kafka/chat/ and checkout branch ex02/app.
 
 
 ## Group Exercise
