@@ -1,7 +1,7 @@
 ---
 apiVersion: 1.0.0
 metadata:
-  generateName: tp-kafka-ex01-
+  name: tp-kafka-ex01
 projects:
   - name: excercise
     source:
