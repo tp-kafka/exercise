@@ -1,0 +1,57 @@
+metadata:
+  name: tp-kafka-ex02-junit
+attributes:
+  persistVolumes: 'false'
+projects:
+  - name: chat
+    source:
+      location: 'https://github.com/tp-kafka/chat'
+      type: git
+      branch: ex02/junit
+components:
+  - command:
+      - sleep
+      - infinity
+    memoryLimit: 128Mi
+    type: dockerimage
+    alias: kafka
+    image: taion809/kafka-cli
+  - id: redhat/java11/latest
+    type: chePlugin
+  - mountSources: true
+    memoryLimit: 1024Mi
+    type: dockerimage
+    volumes:
+      - name: m2
+        containerPath: /home/user/.m2
+    alias: maven
+    image: 'quay.io/eclipse/che-java11-maven:nightly'
+    env:
+      - value: ''
+        name: MAVEN_CONFIG
+      - value: >-
+          -XX:MaxRAMPercentage=50 -XX:+UseParallelGC -XX:MinHeapFreeRatio=10
+          -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4
+          -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true
+          -Xms20m -Djava.security.egd=file:/dev/./urandom
+        name: JAVA_OPTS
+      - value: >-
+          -XX:MaxRAMPercentage=50 -XX:+UseParallelGC -XX:MinHeapFreeRatio=10
+          -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4
+          -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true
+          -Xms20m -Djava.security.egd=file:/dev/./urandom -Duser.home=/home/user
+        name: MAVEN_OPTS
+      - value: >-
+          -XX:MaxRAMPercentage=50 -XX:+UseParallelGC -XX:MinHeapFreeRatio=10
+          -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4
+          -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true
+          -Xms20m -Djava.security.egd=file:/dev/./urandom
+        name: JAVA_TOOL_OPTIONS
+apiVersion: 1.0.0
+commands:
+  - name: run tests
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/chat'
+        type: exec
+        command: mvn clean test
+        component: maven
