@@ -64,12 +64,7 @@ commands:
         type: exec
         command: mvn clean spring-boot:run
         component: maven
-  - name: stop app
-    actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/chat'
-        type: exec
-        command: "echo 'Stopping the application...' && kill $(pidof java) && echo 'The application has been successfully stopped'"
-        component: maven
+
         
         
         
