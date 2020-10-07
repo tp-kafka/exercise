@@ -27,7 +27,7 @@ components:
     alias: maven
     endpoints:
       - name: 'chat-app'
-      port: 8080
+        port: 8080
     image: 'quay.io/eclipse/che-java11-maven:nightly'
     env:
       - value: ''
