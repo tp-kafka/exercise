@@ -44,7 +44,7 @@ Now we will work on our Chat Application Example. Please use the devfile URL htt
 - [ ] Change the 'spring.kafka.producer.value-serializer' property and produce messages with another type.
 - [ ] Consume your new messages through the cli tools. 
 
-## Bonus C: SSE
+## Bonus C: SSE (Server Sent Events)
 - [ ] Instead of just logging received chat messages, push them via SSE to Web-Clients
 
 
