@@ -1,5 +1,5 @@
 metadata:
-  name: tp-kafka-ex03-user
+  name: tp-kafka-ex03-user-processor
 attributes:
   persistVolumes: 'false'
 projects:
