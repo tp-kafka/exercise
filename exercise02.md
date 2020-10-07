@@ -18,7 +18,31 @@ You will find predefined methods within the chat-service project in class KafkaT
 - [ ] Consume topic and partition (on which the message was received) as well as the string payload from topic "consumeMetadata" by using the KafkaListener, Payload and Header annotation and the KafkaHeaders class
 
 ## Spring Boot Kafka Application
-Now we will work on our Chat Application Example. Please use the devfile URL https://raw.githubusercontent.com/tp-kafka/exercise/master/devfiles/ex02-app.devfile.yaml or clone https://github.com/tp-kafka/chat/ and checkout branch ex02/app.
+Now we will work on our Chat Application Example. Please use the devfile URL https://raw.githubusercontent.com/tp-kafka/exercise/master/devfiles/ex02-app.devfile.yaml or clone https://github.com/tp-kafka/chat/ and checkout branch ex02/app. Note: find relevant lines by searching "TODO".
+
+#### Common Configuration
+Apply the following configuration to your application.properties file
+- [ ] configure topics: we are using two properties to define the topics for consumtion/production set both of them to your team-name
+- [ ] configure group-id: configure the app to use your team-name as group-id
+
+#### Producing ChatMessages
+- [ ] configure serialization
+Use JSON Serialization for key and value by setting the properties `spring.kafka.producer.key-serializer` and `spring.kafka.producer.value-serializer` to `org.springframework.kafka.support.serializer.JsonSerializer`
+- [ ] send chatmessage serialized as JSON to inputTopic by implementing the method `sendChatMessage` in `KafkaAdapter`
+
+#### Consuming ChatMessages
+- [ ] configure deserialization
+Use JSON Deserialization for key and value by setting the properties `spring.kafka.consumer.key-deserializer` and `spring.kafka.consumer.value-deserializer` to `org.springframework.kafka.support.serializer.ErrorHandlingDeserializer`
+- [ ] configure error handling
+Configure the `ErrorHandlingDeserializer` to use JSON by setting the properties `spring.kafka.properties.spring.deserializer.key.delegate.class` and `spring.kafka.properties.spring.deserializer.value.delegate.class` to `org.springframework.kafka.support.serializer.JsonDeserializer` 
+- [ ] allow the deserialization of classes within the project by setting the property `spring.kafka.consumer.properties.spring.json.trusted.packages` to `tp.kafka.chat`
+- [ ] receive chatmessage from topic configured by `"${chat.topics.out.input}"`  by annotating the method `receiveChatMessage` in `KafkaAdapter`
+
+#### Check your app
+- [ ] run JUnit test
+- [ ] configure API placeholders in application.properties or set environment variables
+- [ ] run app by executing `mvn clean spring-boot:run`
+- [ ] open ui in webbrowser and send some messages. check them on console output.
 
 
 ## Group Exercise
