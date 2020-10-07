@@ -55,9 +55,6 @@ Configure the `ErrorHandlingDeserializer` to use JSON by setting the properties 
 
 
 
-
-
-
 ## Bonus A: Headers
 - [ ] Send Messages with custom headers. Use the KafkaTemplate in combination with ProducerRecord.
 
@@ -68,7 +65,11 @@ Configure the `ErrorHandlingDeserializer` to use JSON by setting the properties 
 - [ ] Change the 'spring.kafka.producer.value-serializer' property and produce messages with another type.
 - [ ] Consume your new messages through the cli tools. 
 
-## Bonus C: SSE (Server Sent Events)
+## Bonus C: Error Handling
+- [ ] test the error handling by sending illigal data with the console-producer to the app. What happens per default?
+- [ ] attach your custom handler by providing a custom `errorHandler`-Bean to the `KafkaListener`-Annotation
+
+## Bonus D: SSE (Server Sent Events)
 - [ ] Instead of just logging received chat messages, push them via SSE to Web-Clients
 
 
