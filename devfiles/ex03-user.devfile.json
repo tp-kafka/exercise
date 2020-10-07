@@ -3,7 +3,7 @@ metadata:
 attributes:
   persistVolumes: 'false'
 projects:
-  - name: chat
+  - name: user
     source:
       location: 'https://github.com/tp-kafka/user'
       type: git
@@ -54,7 +54,7 @@ apiVersion: 1.0.0
 commands:
   - name: run app
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/chat'
+      - workdir: '${CHE_PROJECTS_ROOT}/user'
         type: exec
         command: mvn clean spring-boot:run
         component: maven
