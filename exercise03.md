@@ -45,4 +45,4 @@ Extend the spam processor by adding a filter which will supress users which send
 Extend the rest Endpoint of the user processor so that you can query which instance of the application holds a certain key. Use `streams.queryMetadataForKey` to query the metadata for a key.
 
 ## Bonus C: Distributed Data 2
-Extend the endpoint from Bonus B so that the endpoint does not return the application instance. Instead query the data and return it if the data should be available locally. Otherwise send a redirect to the correct host - assuming the activeHost field in the metadata represents a querieable Host.
+Extend the endpoint from Bonus B so that the endpoint does not return the application instance. Instead query the data and return it if the data should be available locally. Otherwise send a redirect to the correct host - assuming the activeHost field in the metadata represents a querieable Host. Control the activeHost filed by configuring `quarkus.kafka-streams.application-server` and set it to the publicly avalable route to your workspace. Test your code in collaboration with another team.
