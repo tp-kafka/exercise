@@ -12,6 +12,15 @@ Get the processor to read ChatMessages from the input topic, filter out all mess
 - [ ] filter out illegal messages by invoking `containsBadWords` before writing to the output
 
 ## User Processor
+Now we will work on the user-processor. Please use the devfile URLhttps://raw.githubusercontent.com/tp-kafka/exercise/master/devfiles/ex03-user-processor.devfile.yaml or clone https://github.com/tp-kafka/user-processor/ and checkout branch ex03. Note: find relevant lines by searching "TODO".
+
+The user processor should enhance the chat messages, which contain only the user ids with the data captured by the user application. The user application is producing events to kafka when the REST interface is called. Program the user processor to aggregate those events into a KTable and check the functionality by using the rest interface of the user application to produce events and checking the root endpoint of the user processor, wich will return the local data of the KTable.
+
+- [ ] create a stream from `conf.userTopic()`. Use the provided Serdes.
+- [ ] create a materialized KTable from that stream by using `the description provided in `materializesUserTable()`
+- [ ] check your table by opening the endpoint of the app
+- [ ] produce some events by using the user application and check your table again
+
 
 ## Bonus A: Windowing
 
