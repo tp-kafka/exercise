@@ -83,3 +83,10 @@ Note the parameter *--from-beginning*. If you omit it, you will see only message
     --topic <TOPIC_NAME> \
     --bootstrap-server pkc-4ygn6.europe-west3.gcp.confluent.cloud:9092 \
     --command-config client.properties
+
+**Resetting stream applications**
+
+    kafka-streams-application-reset.sh \
+	    --application-id <APPLICATION_ID> \
+	    --bootstrap-servers pkc-4ygn6.europe-west3.gcp.confluent.cloud:9092\
+	    --input-topics <TOPIC_NAME>
