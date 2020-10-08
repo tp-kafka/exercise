@@ -1,3 +1,4 @@
+
 Please use this devfile: https://raw.githubusercontent.com/tp-kafka/exercise/master/devfiles/ex04-schema-registry.devfile.yaml
 
 
@@ -32,7 +33,7 @@ Please use this devfile: https://raw.githubusercontent.com/tp-kafka/exercise/mas
 
 3. in pom.xml add the following:
 
-
+pom.xml:
 
     <build>
         <plugins>
@@ -90,6 +91,7 @@ Please use this devfile: https://raw.githubusercontent.com/tp-kafka/exercise/mas
 4. Build the project. This should generate a new class, *example.avro.User*, and store it under *src/main/java*
 5. Create a producer
 
+Producer.java:
 
     import example.avro.User;
     import io.confluent.kafka.serializers.AbstractKafkaAvroSerDeConfig;
@@ -132,6 +134,7 @@ Please use this devfile: https://raw.githubusercontent.com/tp-kafka/exercise/mas
 
 6. Create a consumer
 
+Consumer.java
 
     import example.avro.User;
     import io.confluent.kafka.serializers.KafkaAvroDeserializer;
