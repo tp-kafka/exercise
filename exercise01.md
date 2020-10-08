@@ -1,4 +1,6 @@
 ## Setup
+Please use this devfile: https://raw.githubusercontent.com/tp-kafka/exercise/master/devfiles/ex01.devfile.yaml
+
 Kafka Tools are located in */opt/bitnami/kafka/bin/*
 For convenience, you can execute all commands and create the property file in that directory.
 
