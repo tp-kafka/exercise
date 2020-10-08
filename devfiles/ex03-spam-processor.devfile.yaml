@@ -7,7 +7,7 @@ projects:
     source:
       location: 'https://github.com/tp-kafka/spam-processor'
       type: git
-      branch: main
+      branch: quarkus
 components:
   - command:
       - sleep
@@ -26,7 +26,7 @@ components:
         containerPath: /home/user/.m2
     alias: maven
     endpoints:
-      - name: 'user-processor'
+      - name: 'spam-processor'
         port: 8080
     image: 'quay.io/eclipse/che-java11-maven:nightly'
     env:
