@@ -21,6 +21,13 @@ The user processor should enhance the chat messages, which contain only the user
 - [ ] check your table by opening the endpoint of the app
 - [ ] produce some events by using the user application and check your table again
 
+Now we need to enrich the chat messages in the filtered topic by adding the user data and write the resulting stream to the chat topic.
+- [ ]  create a stream from `conf.filteredTopic()`. Use the provided Serdes.
+- [ ]  ensure that chat messages are processed on the processor insance which contains the user data matching the userId in the chat message.
+- [ ]  join the chat message with the user data. Use the `enrich` method to create a `RichChatMessage`
+- [ ]  produce the resulting stream to `conf.outputTopic()`. Use the provided serdes.
+
+## Group Exercise
 
 ## Bonus A: Windowing
 
