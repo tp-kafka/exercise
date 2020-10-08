@@ -7,7 +7,7 @@ projects:
     source:
       location: 'https://github.com/tp-kafka/user-processor'
       type: git
-      branch: main
+      branch: ex03
 components:
   - command:
       - sleep
